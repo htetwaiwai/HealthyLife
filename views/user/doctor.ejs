@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor List</title>
+</head>
+<body>
+    <h1>Doctor List</h1>
+    <form action="/doctors/doctoradd" method="post">
+        <label for="categories">Category</label>
+        <select name="categories" calss="categories" id="">
+            <option value="eye">Ophthalmologist</option>
+            <option value="eye">General Paractitioner</option>
+            <option value="eye">Hearing Specialist</option>
+        </select><p></p>
+        <label for="name">Doctor Name</label>
+        <input type="text" name="name" id="name"><p></p>
+        <label for="degree">Degree</label>
+        <input type="text" name="degree" id="degree"><p></p>
+        <label for="clinic">Clinic and Hospital</label>
+        <input type="text" name="clinic" id="clinic"><p></p>
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location"><p></p>
+        <label for="phno">Phone Number</label>
+        <input type="text" name="phno" id="phno"><p></p>
+        <input type="submit" value="Add">
+    </form>
+</body>
+</html>
