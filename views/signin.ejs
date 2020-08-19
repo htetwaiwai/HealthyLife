@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+</head>
+<body>
+    <h1>Sign In</h1>
+    <form action="/signin" method="post">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email"><p></p>
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password"><p></p>
+    <input type="checkbox" name="rememberMe" id="rememberMe">rememberMe <p></p>
+    <input type="submit" value="signin">
+    
+</form>
+<script src="/javascripts/jquery-3.4.1.min.js"></script>
+<script src="/javascripts/js.cookie.min.js"></script>
+    
+</body>
+<script>
+
+    $('#rememberMe').click(function(){
+      if($("#rememberMe").prop("checked") == true){
+        Cookies.set('email', $('#email').val());
+        Cookies.set('password', $('#password').val());
+      }else {
+        Cookies.remove('email');
+        Cookies.remove('password');
+      }
+    });
+    if(Cookies.get('email')){
+      $('#email').val(Cookies.get('email'));
+      $('#rememberMe').prop('checked', true);
+    }
+   if(Cookies.get('password')){
+      $('#password').val(Cookies.get('password'));
+      $('#rememberMe').prop('checked', true);
+    }
+  ;
+</script>
+</html>

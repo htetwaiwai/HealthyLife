@@ -4,10 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose=require('mongoose');
+var session=require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var doctorsRouter=require('./routes/doctors')
+var doctorsRouter=require('./routes/doctors');
+
 
 
 var app = express();
@@ -22,15 +24,30 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: "chichi1999",
+  resave:false,
+  saveUnintialized:true
+}));
+
+
 mongoose.connect('mongodb://127.0.0.1/healthylife');
 var db=mongoose.connection;
 db.on('error',console.error.bind(console,"Mongodb connection error"));
 
 app.use('/', indexRouter);
+
 app.use('/users', usersRouter);
+
+
+app.use(function (req,res,next) {
+  if(req.session.user){
+  next();
+  }else{
+    res.redirect('/signin');
+  }
+});
 app.use('/doctors',doctorsRouter);
-
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
