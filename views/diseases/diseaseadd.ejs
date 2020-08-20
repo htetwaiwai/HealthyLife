@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseases</title>
+</head>
+<body>
+    <h1>Disease</h1>
+    <form action="/diseases/diseaseadd" method="post" enctype="multipart/form-data">
+      
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title"><p></p>
+        <label for="about">about</label>
+        <input type="text" name="about" id="about"><p></p>
+        <label for="doAnddont">Do And Don't</label>
+        <input type="text" name="doAnddont" id="doAnddont"><p></p>
+        <label for="symptom">Symptoms</label>
+        <input type="text" name="symptom" id="symptom"><p></p>
+        <label for="img">Image</label>
+        <input type="file" name="photo" id="img"><p></p>
+        <input type="submit" value="diseaseadd">
+    </form>
+</body>
+</html>

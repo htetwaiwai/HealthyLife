@@ -8,6 +8,7 @@ var mongoose=require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var doctorsRouter=require('./routes/doctors')
+var diseasesRouter=require('./routes/diseases');
 
 
 var app = express();
@@ -29,6 +30,8 @@ db.on('error',console.error.bind(console,"Mongodb connection error"));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/doctors',doctorsRouter);
+app.use('/diseases',diseasesRouter)
+
 
 
 

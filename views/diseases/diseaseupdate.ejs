@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseases</title>
+</head>
+<body>
+    <h1>Disease</h1>
+    <form action="/diseases/diseaseupdate" method="post" enctype="multipart/form-data">
+       
+        <input type="hidden" name="id" value="<%=diseases._id %>">
+        
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" value="<%=diseases.title %>" ><p></p>
+        
+        <label for="about">about</label>
+        <input type="text" name="about" id="about" value="<%=diseases.about%>"><p></p>
+       
+        <label for="doAnddont">Do And Don't</label>
+        <input type="text" name="doAnddont" id="doAnddont" value="<%=diseases.doAnddont %>"><p></p>
+        
+        <label for="symptom">Symptoms</label>
+        <input type="text" name="symptom" id="symptom" value="<%=diseases.symptom %>"><p></p>
+        
+        <label for="photo">Image</label>
+        <input type="file" name="photo" id="photo" value="<%=diseases.imgUrl %>"><p></p>
+        
+        <button type="submit">Diseaseupdate</button>
+    </form>
+</body>
+</html>
