@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor List</title>
+</head>
+<body>
+    <h1>Doctor List</h1>
+    <table>
+        <thead>
+            <th>Category</th>
+            <th>Doctor Name</th>
+            <th>Clinic and Hospital</th>
+            <th>Location</th>
+            <th>Phone Number</th>
+        </thead>
+        <tbody>
+            <% for(var i=0;i<doctor.length;i++){%>
+                
+            <tr>
+                <td><a href="/doctors/doctordetail/<%= doctor[i]._id %>"> <%= doctor[i].categories %></a></td>
+                <td><%= doctor[i].name %></td>
+                <td><%= doctor[i].degree %></td>
+                <td><%= doctor[i].clinic %></td>
+                <td><%= doctor[i].location %></td>
+                <td><%= doctor[i].phno %></td>
+            </tr>
+            
+            <%}%>
+            
+        </tbody>
+    </table>
+</body>
+</html>
