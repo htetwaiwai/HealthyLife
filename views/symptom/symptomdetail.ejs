@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Symptom Detail</h1> 
+   Disease Name:<%=symptom.title%><p></p>
+   Symptoms:<%=symptom.symptom%><p></p>
+   <a href="/symptoms/symptomupdate/<%= symptom._id %>"><input type="button" name="button" value="Update"></a>
+   <button type="button" name="button"  onclick="del();">Delete</button>
+</body>
+<script>
+    function del(){
+        var del=confirm("Are you sure to delete");
+        if(del){
+            location.href="/symptoms/symptomdelete/<%= symptom._id%>";
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Update</title>
+</head>
+<body>
+    <h1>Doctor Update<1>
+    <form action="/doctors/doctorupdate" method="post">
+        <input type="hidden" name="id" value="<%= doctors._id %>">
+        <label for="categories">Category</label>
+        <select name="categories" calss="categories" id="categoires" value="<%= doctors._categories %>">
+            <option value="eye">Ophthalmologist</option>
+            <option value="eye">General Paractitioner</option>
+            <option value="eye">Hearing Specialist</option>
+        </select><p></p>
+        <label for="name">Doctor Name</label>
+        <input type="text" name="name" id="name" value="<%= doctors.name %>"><p></p>
+        <label for="degree">Degree</label>
+        <input type="text" name="degree" id="degree" value="<%= doctors.degree%>"><p></p>
+        <label for="clinic">Clinic and Hospital</label>
+        <input type="text" name="clinic" id="clinic" value="<%= doctors.clinic %>"><p></p>
+        <label for="location">Location</label>
+        <input type="text" name="location" id="location" value="<%= doctors.location %>"><p></p>
+        <label for="phno">Phone Number</label>
+        <input type="text" name="phno" id="phno" value="<%= doctors. phno%>"><p></p>
+        <button type="submit" >Update</button>
+    </form>
+</body>
+</html>

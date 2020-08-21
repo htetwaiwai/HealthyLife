@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Detail</title>
+</head>
+<body>
+    <h1>Doctor Detail</h1>
+    Categories: <%= doctors.categories %> <p></p>
+  Doctor Name: <%= doctors.name %> <p></p>
+    Degree: <%= doctors.degree %> <p></p>
+    Clinic and Hospital: <%= doctors.clinic %> <p></p>
+    Location: <%= doctors.location %> <p></p>
+   Phone Number: <%= doctors.phno %> <p></p>
+  <button type="button" name="button"  onclick="ch();">Delete</button>
+   <a href="/doctors/doctorupdate/<%= doctors._id %>"><input type="button" name="button" value="Update"></a>
+</body>
+<script>
+    function ch(){
+        var c=confirm("Are you sure to delete");
+        if(c){
+            location.href="/doctors/doctordelete/<%= doctors._id%>";
+        }
+    }
+</script>
+</html>

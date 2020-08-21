@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Symptoms List</h1>
+    <table>
+        <thead>
+            <th>Disease Name</th>
+           <th>Symptoms</th>
+        </thead>
+        <tbody>
+            <% for(var i=0; i<symptom.length; i++){%>
+                <tr>
+                    <td><a href="/symptoms/symptomdetail/<%= symptom[i]._id%>"><%= symptom[i].title %></a></td>
+                    <td><%= symptom[i].symptom %></td>
+                </tr>
+              <%  } %> 
+        </tbody>
+    </table>
+</body>
+</html>
