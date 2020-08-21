@@ -8,22 +8,13 @@ var session=require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
-<<<<<<< HEAD
-var doctorsRouter=require('./routes/doctors')
-var diseasesRouter=require('./routes/diseases');
-=======
-var doctorsRouter=require('./routes/doctors');
 var symptomsRouter=require('./routes/symptoms');
 
-
-var doctorsRouter=require('./routes/doctors')
 var diseasesRouter=require('./routes/diseases');
 
 var doctorsRouter=require('./routes/doctors');
->>>>>>> 63bfc1f07f8832a13437db2f63fa09ac2c68e7d0
 
-var doctorsRouter=require('./routes/doctors');
+
 
 var app = express();
 
@@ -51,13 +42,9 @@ db.on('error',console.error.bind(console,"Mongodb connection error"));
 app.use('/', indexRouter);
 
 app.use('/users', usersRouter);
-<<<<<<< HEAD
-=======
-app.use('/doctors',doctorsRouter);
-app.use('/symptoms',symptomsRouter);
 
-app.use('/diseases',diseasesRouter)
->>>>>>> 63bfc1f07f8832a13437db2f63fa09ac2c68e7d0
+
+
 
 
 
@@ -71,7 +58,11 @@ app.use(function (req,res,next) {
 });
 app.use('/doctors',doctorsRouter);
 
-app.use('/diseases',diseasesRouter)
+app.use('/diseases',diseasesRouter);
+
+app.use('/symptoms',symptomsRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
