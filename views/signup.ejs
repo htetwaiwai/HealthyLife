@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+    <h1>Sign Up</h1>
+    <form action="/signup" method="post" name="frm">
+    <label for="name">Admin Name</label>
+    <input type="text" name="name" id="name"><p></p>
+    <label for="email">Admin Email</label>
+    <input type="email" name="email" id="email"><p></p>
+    <label for="password">Admin Password</label>
+    <input type="password" name="password" id="password"><p></p>
+    <button type="button" id="submitbutton">Submit</button>
+</form>
+</body>
+<script src="/javascripts/jquery-3.4.1.min.js"></script>
+<script>
+$("#email").blur(function(){
+
+    var datap={email:$("#email").val()};
+    if(datap != ''){
+    $.ajax({
+        url:"/emaildu",
+        data:datap,
+        type:"POST",
+        success:function(result){
+            if(result.status){
+                alert("Duplicate email or Invalid email");
+                $("#email").val("");
+                $("#email").focus
+            }
+        }
+    })
+}
+})
+
+$("#submitbutton").click(function(){
+    datap={password: $("#password").val()};
+    $.ajax({
+        url:"/pwdval",
+        data:datap,
+        type:"POST",
+        success:function(result){
+            if(result.status){
+                frm.submit();
+            }
+            else{
+                $("#password").val('');
+                $("#password").focus();
+                alert("Password is not validate......")
+            }
+        }
+    })
+})
+
+</script>
+</html>

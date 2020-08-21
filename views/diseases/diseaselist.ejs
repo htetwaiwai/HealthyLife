@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+   <h1>Diseases List</h1> 
+
+   <table>
+ <thead>
+     <th>Title</th><p></p>
+     <th>About</th><p></p>
+     <th>Do And Don't</th><p></p>
+     <th>Symptoms</th><p></p>
+     <th>Image</th>
+ </thead>
+ <tbody>
+    <% for(var i=0 ; i<diseases.length ; i++ ){%>
+
+        <tr>
+            <td> <a href="/diseases/diseasedetail/<%=diseases[i]._id%>"><%=diseases[i].title %></a></td>
+            <td> <%=diseases[i].about %></td>
+            <td> <%=diseases[i].doAnddont %></td>
+            <td> <%=diseases[i].symptom %></td>
+          <td> <img src="<%=diseases[i].imgUrl%>" alt="" height="100" width="100" > </td> 
+
+
+            </tr>
+
+   <% }%>
+
+ </tbody>
+   </table>
+</body>
+</html>
