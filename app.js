@@ -8,8 +8,13 @@ var session=require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+<<<<<<< HEAD
+var doctorsRouter=require('./routes/doctors')
+var diseasesRouter=require('./routes/diseases');
+=======
 var doctorsRouter=require('./routes/doctors');
 
+>>>>>>> 98821152a219853da778e54750d9ac1be63f19dd
 
 
 var app = express();
@@ -38,6 +43,12 @@ db.on('error',console.error.bind(console,"Mongodb connection error"));
 app.use('/', indexRouter);
 
 app.use('/users', usersRouter);
+<<<<<<< HEAD
+app.use('/doctors',doctorsRouter);
+app.use('/diseases',diseasesRouter)
+
+=======
+>>>>>>> 98821152a219853da778e54750d9ac1be63f19dd
 
 
 app.use(function (req,res,next) {

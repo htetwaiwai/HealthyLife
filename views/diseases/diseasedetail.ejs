@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Diseases Detail</h1>
+    Title :<%= diseases.title %> <p></p>
+    About :<%= diseases.about %> <p></p>
+    Do And Don't :<%= diseases.doAnddont %> <p></p>
+    Symptom :<%= diseases.symptom %> <p></p>
+   Image :<img src="<%=diseases.imgUrl%>" alt="" height="100" width="100" > <p></p>
+
+
+   <a href="/diseases/diseaseupdate/<%=diseases._id%>">  <button type="submit">update</button></a>
+  <button onclick="del();"> delete</button>
+</body>
+<script>
+    function del(){
+        var con=confirm("are you sure to delete");
+        if(con){
+            location.href="/diseases/diseasedelete/<%=diseases._id %>"
+        }
+        
+    }
+</script>
+</body>
+</html>
