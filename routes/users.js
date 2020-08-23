@@ -10,6 +10,7 @@ router.get('/doctor',function(req,res){
   var d={categories:"Ophthalmologist"};
   Doctor.find(d,function(err,rtn){
     if(err)throw err;
+    console.log(rtn);
     res.render('user/Doctor',{doctors:rtn});
   })
 })
