@@ -30,4 +30,16 @@ router.get('/doctor2',function(req,res){
     res.render('user/Doctor2',{doctors:rtn});
   })
 })
+
+router.get('/userdisease',function(req,res){
+  res.render('user/Disease');
+})
+
+router.post('/userdisease',function(req,res){
+
+  Disease.find(function(err,rtn){
+      if(err) throw err;
+      res.redirect('/user/DiseaseList')
+  })
+})
 module.exports = router;
